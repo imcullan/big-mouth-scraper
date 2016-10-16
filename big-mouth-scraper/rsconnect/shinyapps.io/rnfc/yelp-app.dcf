@@ -1,0 +1,9 @@
+name: yelp-app
+account: rnfc
+server: shinyapps.io
+appId: 131955
+bundleId: 587522
+url: https://rnfc.shinyapps.io/yelp-app/
+when: 1476585025.10437
+asMultiple: FALSE
+asStatic: FALSE
