@@ -109,7 +109,7 @@ fetchReviews <- function(business_name, numOfReviews) {
     for(i in 1:length(reviews_person)) {
       if (curCount < numOfReviews) {
         # get sentiment
-        sentiment_obj <- postForm("https://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=d2b3fac2380c8f8e166954f91ab7104bcfab7b67", .params = list(text=reviews_content[i]), style = 'post')
+        sentiment_obj <- postForm("https://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=301b6a65b92b3c475baba00be032ffa5faffc910", .params = list(text=reviews_content[i]), style = 'post')
         sentiment_xml <- xmlParse(sentiment_obj)
         review_sentiment <- as.double(xpathSApply(sentiment_xml, "//*/score", xmlValue))
         
@@ -148,7 +148,7 @@ ui <- dashboardPage(
                               }'))),
     textInput('searchDescription', label = "Search Description: ", value = "Coffee"),
     textInput('searchLocation', label = "Search Location: ", value = "Toronto, ON"),
-    sliderInput('numOfBusinesses', "Number of Businesses: ", value = 30,  min = 1, max = 100),
+    sliderInput('numOfBusinesses', "Number of Businesses: ", value = 10,  min = 1, max = 100),
     sliderInput('numOfReviews', "Number of Reviews: ", value = 5,  min = 1, max = 100),
     submitButton()
   ),
